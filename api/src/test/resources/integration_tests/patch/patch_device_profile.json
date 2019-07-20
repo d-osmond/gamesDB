@@ -1,0 +1,35 @@
+{
+  "scenarioName": "Patch device profile",
+  "steps": [
+    {
+      "name":"patch_device_profile",
+      "url": "/devices/1",
+      "operation": "PATCH",
+      "request": {
+        "headers": {
+          "Accept": "application/hal+json;charset=UTF-8"
+        },
+        "body": {
+          "format": "Digital"
+        }
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "deviceName" : "Playstation",
+          "platform" : "Playstation 4",
+          "format" : "Digital",
+          "notes" : "",
+          "_links" : {
+            "self" : {
+              "href" : "$NOT.NULL"
+            },
+            "device": {
+            "href": "$NOT.NULL"
+            }
+          }
+      }
+      }
+    }
+  ]
+}

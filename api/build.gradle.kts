@@ -23,10 +23,14 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+
 	runtime("com.h2database:h2")
 
 
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-api")
+	testImplementation("org.jsmart:zerocode-tdd:1.3.9")
 }
 
 tasks.withType<KotlinCompile> {
@@ -34,4 +38,10 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "1.8"
 	}
+}
+
+
+tasks.create<Delete>("cleanAll"){
+	delete("target/")
+	delete("out/")
 }

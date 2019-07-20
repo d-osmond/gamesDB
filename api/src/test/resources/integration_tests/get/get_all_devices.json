@@ -1,0 +1,20 @@
+{
+  "scenarioName": "Get All Devices",
+  "steps": [
+    {
+      "name": "get_all_devices",
+      "url": "/devices/",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "_embedded.devices.SIZE": "$GT.0",
+          "_embedded.devices[0]._links.self.href": "$NOT.NULL"
+        }
+      }
+    }
+  ]
+
+}

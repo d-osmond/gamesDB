@@ -1,0 +1,38 @@
+{
+  "scenarioName": "Create New Device GameBox3000",
+  "steps": [
+    {
+      "name": "create_new_device",
+      "url": "/devices",
+      "operation": "POST",
+      "request": {
+        "headers": {
+          "accept": "application/hal+json;charset=UTF-8"
+        },
+        "body": {
+          "deviceName": "GameBox3000",
+          "platform": "Gamebox",
+          "format": "Ethereal",
+          "notes": "Test device"
+        }
+      },
+      "assertions": {
+        "status": 201,
+        "body": {
+          "deviceName": "GameBox3000",
+          "platform": "Gamebox",
+          "format": "Ethereal",
+          "notes": "Test device",
+          "_links": {
+            "self":{
+              "href": "$NOT.NULL"
+            },
+            "device": {
+              "href": "$NOT.NULL"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
