@@ -26,7 +26,10 @@ dependencies {
 	runtime("com.h2database:h2")
 
 
+
+	testImplementation("org.jsmart:zerocode-rest-bdd")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-api")
 }
 
 tasks.withType<KotlinCompile> {
